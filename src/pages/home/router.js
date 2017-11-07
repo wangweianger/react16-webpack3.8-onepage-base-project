@@ -1,1 +1,3 @@
-home.jsx
+module.exports = {
+	
+}

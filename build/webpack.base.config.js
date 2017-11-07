@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const path = require("path");
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const vueLoaderConfig   = require("./vue-loader-config");
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const PROT = process.env.PROT || 8000
 
@@ -14,15 +13,14 @@ const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 //提取公共文件
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-//项目名字
-const projectName = "/";
+
 //配置开始
 const config = {
         entry: {
             main:[
                 `webpack-dev-server/client?http://172.16.60.7:${PROT}/`,
                 "webpack/hot/dev-server",
-                path.resolve(__dirname, '../src' + projectName + 'main.js')
+                path.resolve(__dirname, '../src/main.jsx')
             ]
         },
         output: {
@@ -33,15 +31,10 @@ const config = {
         },
         module: {
             rules: [{
-                test: /\.vue$/,
+                test: /\.(js|jsx)$/,
                 exclude: "/node_modules/",
-                loader: [ 'happypack/loader?id=vue' ]
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules|vue\/dist/,
                 loader: [ 'happypack/loader?id=js' ]
-            }, 
+            },
             {
                 test: /\.scss$/, 
                 loader: [ 'happypack/loader?id=sass' ]
@@ -69,21 +62,19 @@ const config = {
         ]},
     //自动补全识别后缀
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.jsx', '.json'],
         alias: {
             vue$:'vue/dist/vue.runtime.common.js',
-            components: path.resolve(__dirname, '../src' + projectName + 'components'),
-            commonvue: path.resolve(__dirname, '../src' + projectName + 'commonvue'),
-            pages: path.resolve(__dirname, '../src' + projectName + 'pages'),
-            common: path.resolve(__dirname, '../src' + projectName + 'assets/common'),
-            assets:path.resolve(__dirname, '../src' + projectName + 'assets'),
-            popup: path.resolve(__dirname, '../src' + projectName + 'assets/common/lib/popup/popup.js'),
-            page: path.resolve(__dirname, '../src' + projectName + 'assets/common/lib/page/page.js'),
+            components: path.resolve(__dirname, '../src/components'),
+            commonvue: path.resolve(__dirname, '../src/commonvue'),
+            pages: path.resolve(__dirname, '../src/pages'),
+            common: path.resolve(__dirname, '../src/assets/common'),
+            assets:path.resolve(__dirname, '../src/assets'),
+            popup: path.resolve(__dirname, '../src/assets/common/lib/popup/popup.js'),
+            page: path.resolve(__dirname, '../src/assets/common/lib/page/page.js'),
         },
     },
-    externals: {
-        jquery: 'jQuery'
-    },
+    devtool:"cheap-module-eval-source-map",
     //插件
     plugins: [
         //js 编译多线程 
@@ -93,7 +84,7 @@ const config = {
             loaders: [{
                 loader: 'babel-loader',
                 options: {
-                    presets: [ 'env' ],
+                    presets: [ 'env','react' ],
                 }
             }],
         }),
@@ -102,15 +93,6 @@ const config = {
             id: 'sass',
             threadPool: happyThreadPool,
             loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
-        }),
-        // vue 编译多线程
-        new HappyPack({
-            id: 'vue',
-            threadPool: happyThreadPool,
-            loaders:[{
-                loader: 'vue-loader',
-                options: vueLoaderConfig
-            }]
         }),
         //提取css
         new ExtractTextPlugin("styles.css"),
@@ -122,7 +104,7 @@ const config = {
         //自动生成html文件
         new htmlWebpackPlugin({
             title:"首页",
-            template:path.resolve(__dirname, '../src'+projectName+'index.html'),
+            template:path.resolve(__dirname, '../src/index.html'),
             inject: true,
             hash: true,
             cache: true,

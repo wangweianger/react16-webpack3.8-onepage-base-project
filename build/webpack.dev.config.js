@@ -28,6 +28,6 @@ const server = new WebpackDevServer(compiler, {
     }
 });
 
-server.listen(PROT,'172.16.60.7');
+server.listen(PROT);
 
 console.log(`服务端启动的链接地址为：http://127.0.0.1:${PROT}`);

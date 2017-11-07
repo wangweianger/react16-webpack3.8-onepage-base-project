@@ -1,0 +1,28 @@
+//数据为空时的提示样式
+.data_list_empty{display:inline-block;width:64px;height:64px;background:url('../images/empty.png') no-repeat center center;}
+//-----数据为空时的提示样式结束-----
+
+//禁止选中样式
+.user_select{
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

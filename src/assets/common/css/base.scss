@@ -1,0 +1,129 @@
+@import "./vars.scss";
+
+/*CSS Reset*/
+*, *:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; };
+/*设置字体*/
+body{background:#f5f5f5;}
+/*字体结束*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, hgroup, nav, section, article, aside, footer, figure, figcaption, menu, button { 
+  margin: 0; padding: 0; font-family: '微软雅黑';
+};
+body { font-family:  Helvetica, STHeiTi, Sans-serif; line-height: 1.5; font-size: 14px; color: #333; -webkit-text-size-adjust: none; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); outline: 0; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: normal; }
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border: 0; }
+li { list-style: none; }
+input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit; outline: none; -webkit-appearence: none; -ms-appearence: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { border: none; background: none; -webkit-appearance: none; outline: none; }
+a { -webkit-touch-callout: none; text-decoration: none; outline: 0; color:#6f8fb7;text-decoration:none;}
+em, i { font-style: normal; }
+iframe { display: none; }
+::-webkit-input-placeholder {
+    color: #999;
+}
+
+// 增加相关样式 youwei 2016/8/13 10:58:17
+.input-inline{
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+//一些列的边距样式
+.m5{margin: 5px;}
+.m10{margin: 10px;}
+.m15{margin: 15px;}
+.m20{margin: 20px;}
+.mt5{margin-top: 5px;}
+.mt10{margin-top: 10px;}
+.mt15{margin-top: 15px;}
+.mt20{margin-top: 20px;}
+.ml5{margin-left: 5px;}
+.ml10{margin-left: 10px;}
+.ml15{margin-left: 15px;}
+.ml20{margin-left: 20px;}
+.ml30{margin-left: 30px;}
+.mr5{margin-right: 5px;}
+.mr10{margin-right: 10px;}
+.mr15{margin-right: 15px;}
+.mr20{margin-right: 20px;}
+.mb5{margin-bottom: 5px;}
+.mb10{margin-bottom: 10px;}
+.mb15{margin-bottom: 15px;}
+.mb20{margin-bottom: 20px;}
+.mb30{margin-bottom: 30px;}
+//-----一些列的边距样式结束-----
+
+//等待加载样式
+#loading{display:none;background: url(../images/loading_1.gif) rgba(12,12,12,.2) no-repeat center center;position: fixed;width: 100%;height: 100%;top:0;left:0;}
+//--------等待加载样式结束---------
+
+//字体相关样式
+html,body {color: $htmlcolor !important;}
+.fontCorlor {color: $fontCorlor !important;}
+a:hover{text-decoration:none;}
+
+.fs-12{font-size:12px !important;}
+.fs-14{font-size:14px !important;}
+.fs-16{font-size:16px !important;}
+.fs-18{font-size:18px !important;}
+.fs-20{font-size:20px !important;}
+.fs-25{font-size:25px !important;}
+
+.clear{clear:both}
+.blod{font-weight:blod!important;}
+.normal{font-weight:normal!important;}
+.cursor{cursor: pointer;}
+
+.maincolor{color:$mainColor!important;}
+.red{color:$red!important;}
+.green{color:$green!important;}
+.acolor{color:$acolor!important;}
+.errorClass{background:#fdf4f4;border:solid 1px #fba7a7 !important;}
+
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+
+.fl{float:left;}
+.fr{float:right;}
+
+.inline-block{display:inline-block!important;}
+
+.w-50{width:50px!important;}
+.w-80{width:80px!important;}
+.w-100{width:100px!important;}
+.w-150{width:150px!important;}
+.w-200{width:200px!important;}
+.w-250{width:250px!important;}
+.w-300{width:300px!important;}
+.w-400{width:400px!important;}
+.w-500{width:500px!important;}
+
+//--------字体相关样式结束------
+
+$animal: boder-1px;
+//----禁止选中样式结束-----
+
+//阿里icon样式
+@font-face {
+  font-family: 'iconfont';  /* project id："133474" */
+  src: url('//at.alicdn.com/t/font_6gg3y6tm884wvcxr.eot');
+  src: url('//at.alicdn.com/t/font_6gg3y6tm884wvcxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_6gg3y6tm884wvcxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_6gg3y6tm884wvcxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_6gg3y6tm884wvcxr.svg#iconfont') format('svg');
+}
+                    
+@mixin icon-font ($sizing) {
+    font-family:"iconfont";
+    font-size:$sizing;
+    font-style:normal;
+    vertical-align: middle;
+}
+.iconfont{@include icon-font(16px)}
+//------阿里icon样式结束--------
+
+@import 'common.scss';
+
+

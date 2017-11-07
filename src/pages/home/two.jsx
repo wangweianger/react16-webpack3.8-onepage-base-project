@@ -2,12 +2,11 @@ import React from 'react'
 
 require('./home.scss')
 
-
 class Home extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            username: 'wangweianger00'
+            username: 'wei'
         }
     }
 
@@ -19,7 +18,8 @@ class Home extends React.Component {
                 </div>
             </div>
         )
-    } 
+    }  
 }
+
 
 module.exports = Home 
