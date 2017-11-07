@@ -8,19 +8,13 @@ module.exports = {
     // 你想要打包的模块的数组
     entry: {
         vendor: [
-            'vue',
-            'vuex',
-            'vue-router',
-            'jquery', 
+            'react',
+            'react-router-dom',
+            'redux',
+            'react-redux',
+            'react-dom',
             'zane-calendar',
             'common/js/format',
-            'popup',
-            'page',
-            'common/lib/mixin/propsync',
-            'common/js/jquery.cookie.js',
-            'common/lib/bootstrap/css/bootstrap.css',
-            'common/lib/bootstrap/js/bootstrap.js',
-            'accounting',
         ]
     },
     output: {
