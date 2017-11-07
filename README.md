@@ -19,14 +19,15 @@
 
 ```
 npm install
+或
+yarn install
 ```
 
 3.运行开发环境
 
 ```
 npm run dev 
-或
-yarn install
+
 ```
 
 4.打包生产文件
