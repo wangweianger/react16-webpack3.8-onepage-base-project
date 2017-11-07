@@ -2,12 +2,10 @@
 
 /*CSS Reset*/
 *, *:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; };
-/*设置字体*/
-body{background:#f5f5f5;}
-/*字体结束*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, hgroup, nav, section, article, aside, footer, figure, figcaption, menu, button { 
   margin: 0; padding: 0; font-family: '微软雅黑';
 };
+body{background:#f5f5f5;max-width:750px;margin:0 auto;}
 body { font-family:  Helvetica, STHeiTi, Sans-serif; line-height: 1.5; font-size: 14px; color: #333; -webkit-text-size-adjust: none; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); outline: 0; }
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: normal; }
 table { border-collapse: collapse; border-spacing: 0; }

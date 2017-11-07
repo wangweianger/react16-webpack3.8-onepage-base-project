@@ -5,11 +5,9 @@ import {
     Link
 } from 'react-router-dom'
 
-
 import Home from './pages/home/home.jsx'
 import One from './pages/home/one.jsx'
 import Two from './pages/home/two.jsx'
-
 
 export default class App extends Component {
     render() {

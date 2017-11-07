@@ -14,7 +14,8 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="home">
-                    {this.state.username}
+                    {this.state.username}<br/>
+                    <img src="http://img4.imgtn.bdimg.com/it/u=2064784076,1799293544&fm=200&gp=0.jpg" />
                 </div>
             </div>
         )
