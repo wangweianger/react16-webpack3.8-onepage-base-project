@@ -11,6 +11,9 @@
 ## 项目webpack 优化说明文档
 ## http://blog.seosiwei.com/detail/9
 
+## react-router的4种异步加载方式
+## http://blog.seosiwei.com/detail/10
+
 ## 项目步骤
 
 1.安装node.js

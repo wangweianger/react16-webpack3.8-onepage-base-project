@@ -7,12 +7,12 @@ import {
 } from 'react-router-dom'
 
 /*------------------------------react-loadable按需加载-------------------------------------------*/
-import Loadable from 'react-loadable';
-import Loading from './components/Loading'
-const Home = Loadable({loader: () => import('./pages/home/home'),loading:Loading});
-const One = Loadable({loader: () => import('./pages/home/one'),loading:Loading});
-const Two = Loadable({loader: () => import('./pages/home/two'),loading:Loading});
-const User = Loadable({loader: () => import('./pages/user/user'),loading:Loading});
+// import Loadable from 'react-loadable';
+// import Loading from './components/Loading'
+// const Home = Loadable({loader: () => import('./pages/home/home'),loading:Loading});
+// const One = Loadable({loader: () => import('./pages/home/one'),loading:Loading});
+// const Two = Loadable({loader: () => import('./pages/home/two'),loading:Loading});
+// const User = Loadable({loader: () => import('./pages/user/user'),loading:Loading});
 
 /*------------------------------bundle-loader按需加载---------------------------------------------*/
 // import Bundle from './components/Bundle'
@@ -34,12 +34,11 @@ const User = Loadable({loader: () => import('./pages/user/user'),loading:Loading
 // const User = (props) => (<Bundle load={() => import('./pages/user/user')}>{(Chat) => <Chat {...props}/>}</Bundle>);
 
 /*--------------------------------Create an Async Componen按需加载-------------------------------------*/
-// import asyncComponent from './components/AsyncComponent';
-// const Home = asyncComponent(() => import("./pages/home/home"));
-// const One = asyncComponent(() => import("./pages/home/one"));
-// const Two = asyncComponent(() => import("./pages/home/two"));
-// const User = asyncComponent(() => import("./pages/user/user"));
-
+import asyncComponent from './components/AsyncComponent';
+const Home = asyncComponent(() => import("./pages/home/home"));
+const One = asyncComponent(() => import("./pages/home/one"));
+const Two = asyncComponent(() => import("./pages/home/two"));
+const User = asyncComponent(() => import("./pages/user/user"));
 
 
 export default class App extends Component {
