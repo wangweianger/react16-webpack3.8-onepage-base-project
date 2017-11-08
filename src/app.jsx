@@ -6,23 +6,30 @@ import {
     Link
 } from 'react-router-dom'
 
-import Home from './pages/home/home.jsx'
-import One from './pages/home/one.jsx'
-import Two from './pages/home/two.jsx'
+import Loadable from 'react-loadable';
+import Loading from './components/Loading'
+
+
+const Home = Loadable({loader: () => import('./pages/home/home'),loading:Loading});
+const One = Loadable({loader: () => import('./pages/home/one'),loading:Loading});
+const Two = Loadable({loader: () => import('./pages/home/two'),loading:Loading});
+const User = Loadable({loader: () => import('./pages/user/user'),loading:Loading});
 
 export default class App extends Component {
     render() {
         return (
-            <Router>
+            <Router> 
                 <div>
-                    <ul>
-                        <li><Link to="/">Form</Link></li>
+                    <ul className="nav">
+                        <li><Link to="/">Home</Link></li>
                         <li><Link to="/one">One</Link></li>
                         <li><Link to="/two">Two</Link></li>
+                        <li><Link to="/user">User</Link></li>
                     </ul>
                     <Route path="/" exact component={Home}/>
                     <Route path="/one" component={One}/>
                     <Route path="/two" component={Two} />
+                    <Route path="/user" component={User} />
                 </div>
             </Router>
         )

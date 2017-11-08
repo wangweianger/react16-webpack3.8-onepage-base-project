@@ -12,7 +12,15 @@
 	user-select:none;
 }
 
-
+.nav{
+	overflow:hidden;
+	width:350px;
+	margin:30px auto 0px;
+	li{
+		float:left;
+		padding:10px 20px;
+	}
+}
 
 
 
