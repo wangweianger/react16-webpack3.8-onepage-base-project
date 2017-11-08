@@ -2,7 +2,7 @@ import React from 'react'
 
 require('./home.scss')
 
-class Home extends React.Component {
+export default class Home extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -22,4 +22,3 @@ class Home extends React.Component {
     } 
 }
 
-module.exports = Home 

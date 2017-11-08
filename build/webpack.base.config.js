@@ -20,6 +20,7 @@ const config = {
             main:[
                 `webpack-dev-server/client?http://172.16.60.7:${PROT}/`,
                 "webpack/hot/dev-server",
+                "babel-polyfill",
                 path.resolve(__dirname, '../src/main.jsx')
             ]
         },
