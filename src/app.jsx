@@ -40,25 +40,25 @@ const One = asyncComponent(() => import("./pages/home/one"));
 const Two = asyncComponent(() => import("./pages/home/two"));
 const User = asyncComponent(() => import("./pages/user/user"));
 
-import { renderRoutes } from 'react-router-config'
+// import { renderRoutes } from 'react-router-config'
 
-const routes =[
-    { 
-        path: '/',
-        exact: true,
-        component: Home,
-        routes:[
-            {
-                path: '/home/one',
-                component: One
-            },
-            {
-                path: '/home/two',
-                component: Two
-            }
-        ]
-    },
-]
+// const routes =[
+//     { 
+//         path: '/',
+//         exact: true,
+//         component: Home,
+//         routes:[
+//             {
+//                 path: '/home/one',
+//                 component: One
+//             },
+//             {
+//                 path: '/home/two',
+//                 component: Two
+//             }
+//         ]
+//     },
+// ]
 
 export default class App extends Component {
     render() {
@@ -71,11 +71,11 @@ export default class App extends Component {
                         <li><Link to="/two">Two</Link></li>
                         <li><Link to="/user">User</Link></li>
                     </ul>
-                    {renderRoutes(routes)}
-                    {/*<Route path="/" exact component={Home}/>
+                    {/*{renderRoutes(routes)}*/}
+                    <Route path="/" exact component={Home}/>
                     <Route path="/one" component={One}/>
                     <Route path="/two" component={Two} />
-                    <Route path="/user" component={User} />*/}
+                    <Route path="/user" component={User} />
                 </div>
             </Router>
         )
