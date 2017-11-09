@@ -12,10 +12,10 @@ require('./assets/common/css/base.scss');
  
 // 创建 Redux 的 store 对象
 const store = createStore(
-  combineReducers({
-    reducers,
-    routing: routerReducer
-  })
+  	combineReducers({
+	    reducers,
+	    routing: routerReducer
+  	})
 )
 
 render(

@@ -5,6 +5,7 @@ import {
     Switch,
     Link
 } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
 
 /*------------------------------react-loadable按需加载-------------------------------------------*/
 // import Loadable from 'react-loadable';
@@ -34,31 +35,18 @@ import {
 // const User = (props) => (<Bundle load={() => import('./pages/user/user')}>{(Chat) => <Chat {...props}/>}</Bundle>);
 
 /*--------------------------------Create an Async Componen按需加载-------------------------------------*/
-import asyncComponent from './components/AsyncComponent';
-const Home = asyncComponent(() => import("./pages/home/home"));
-const One = asyncComponent(() => import("./pages/home/one"));
-const Two = asyncComponent(() => import("./pages/home/two"));
-const User = asyncComponent(() => import("./pages/user/user"));
+// import asyncComponent from './components/AsyncComponent';
+// const Home = asyncComponent(() => import("./pages/home/home"));
+// const One = asyncComponent(() => import("./pages/home/one"));
+// const Two = asyncComponent(() => import("./pages/home/two"));
+// const User = asyncComponent(() => import("./pages/user/user"));
 
-// import { renderRoutes } from 'react-router-config'
 
-// const routes =[
-//     { 
-//         path: '/',
-//         exact: true,
-//         component: Home,
-//         routes:[
-//             {
-//                 path: '/home/one',
-//                 component: One
-//             },
-//             {
-//                 path: '/home/two',
-//                 component: Two
-//             }
-//         ]
-//     },
-// ]
+// 合并路由
+const routes = [
+    ...require('pages/home/router'),
+    ...require('pages/user/router')
+]
 
 export default class App extends Component {
     render() {
@@ -71,11 +59,12 @@ export default class App extends Component {
                         <li><Link to="/two">Two</Link></li>
                         <li><Link to="/user">User</Link></li>
                     </ul>
-                    {/*{renderRoutes(routes)}*/}
-                    <Route path="/" exact component={Home}/>
+                    {renderRoutes(routes)}
+
+                    {/*<Route path="/" exact component={Home}/>
                     <Route path="/one" component={One}/>
                     <Route path="/two" component={Two} />
-                    <Route path="/user" component={User} />
+                    <Route path="/user" component={User} />*/}
                 </div>
             </Router>
         )
