@@ -85,7 +85,7 @@ const config = {
             loaders: [{
                 loader: 'babel-loader',
                 options: {
-                    presets: [ 'env','react' ],
+                    presets: [ 'env','react' ,'flow'],
                     plugins: ['syntax-dynamic-import']
                 }
             }],

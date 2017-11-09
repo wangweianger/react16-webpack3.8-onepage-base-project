@@ -4,6 +4,7 @@
   "description": "基础架子",
   "main": "index.js",
   "scripts": {
+    "flow": "flow",
     "dev": "cross-env PROT=8000 node build/webpack.dev.config.js",
     "test": "webpack -d --progress --hide-modules --colors --config build/webpack.test.config.js",
     "build": "webpack --progress --colors --config build/webpack.product.config.js",
@@ -23,11 +24,13 @@
   "license": "ISC",
   "homepage": "http://blog.seosiwei.com/",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "bundle-loader": "^0.5.5",
     "cross-env": "^5.1.1",
