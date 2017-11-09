@@ -11,7 +11,6 @@ export default class Home extends React.Component {
         this.state = {
             username: 'wang'
         }
-        console.log(this.props)
     }
 
     render() {
