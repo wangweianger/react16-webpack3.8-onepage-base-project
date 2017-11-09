@@ -39,4 +39,21 @@ npm run dev
 npm run build
 ``` 
 
+## flow使用请参考官网：https://flow.org/
+
+```
+使用flow检查的文件在顶部增加  
+// @flow   或者  /* @flow */  标识
+
+检查全部文件
+npm run flow check --all 
+
+
+```
+
+
+
+
+
+
 
