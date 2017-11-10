@@ -1,8 +1,8 @@
-const path = require("path");
-const webpack = require("webpack");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const distpath = '../dist/production/libs';
+const distpath = '../dist/production/libs'
 
 module.exports = {
     // 你想要打包的模块的数组
@@ -28,16 +28,13 @@ module.exports = {
             {
                 test:/\.css$/, 
                 loader: 'css-loader'
-            },
-            {
+            },{
                 test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=8192&name=img/[name].[ext]?[hash]'
-            },
-            {
-            　　test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
-            　　loader: 'url-loader?importLoaders=1&limit=1000&name=fonts/[name].[ext]'
-        　　 },
-            {
+            },{
+                test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+                loader: 'url-loader?importLoaders=1&limit=1000&name=fonts/[name].[ext]'
+            },{
                 test: /\.js$/,
                 exclude: /node_modules\/dist/,
                 loader: 'babel-loader',
@@ -85,7 +82,7 @@ module.exports = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.ModuleConcatenationPlugin(),
     ]
-};
+}
 
 
 

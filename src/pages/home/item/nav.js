@@ -4,7 +4,7 @@ require('../home.scss')
 
 export default class Home extends React.Component {
     constructor(props, context) {
-        super(props, context);
+        super(props, context)
     }
 
     render() {

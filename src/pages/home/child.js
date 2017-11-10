@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react'
 
 require('./home.scss')
 
 export default class Child extends React.Component {
     constructor(props, context) {
-        super(props, context);
+        super(props, context)
         this.state = {
             username: 'wang'
         }

@@ -1,8 +1,8 @@
-// //开发环境
+//开发环境
 const webpack = require('webpack')
 const config = require('./webpack.base.config')
 const WebpackDevServer = require('webpack-dev-server')
-const compiler = webpack(config);
+const compiler = webpack(config)
 const PROT = process.env.PROT || 8000
 
 const server = new WebpackDevServer(compiler, {
@@ -19,15 +19,15 @@ const server = new WebpackDevServer(compiler, {
         colors: true 
     },
     proxy: {
-        "/api": {
-          target: 'http://cloudStore-admin.morning-star.cn/',
-          secure: false,
-          pathRewrite: {'^/api' : '/'},
-          changeOrigin: true,
+        '/api': {
+            target: 'http://cloudStore-admin.morning-star.cn/',
+            secure: false,
+            pathRewrite: {'^/api' : '/'},
+            changeOrigin: true,
         }
     }
-});
+})
 
-server.listen(PROT);
+server.listen(PROT)
 
-console.log(`服务端启动的链接地址为：http://127.0.0.1:${PROT}`);
+console.log(`服务端启动的链接地址为：http://127.0.0.1:${PROT}`)

@@ -1,24 +1,22 @@
-
-
 //util 公共对象函数
 class util{
-	//初始化对象
-	constructor(){
-		this.win=window.top;
-		this.UA=navigator.userAgent;
-		this.isPC=this.UA.indexOf('Windows NT')>-1;
-		this.isAndroid=this.UA.indexOf('Android')>-1;
-		this.isIos=this.UA.indexOf('Mac OS X')>-1;
-		this.isIphone=this.UA.indexOf('iPhone;')>-1;
-		this.isIpad=this.UA.indexOf('iPad;')>-1;
-		this.isIE7=this.UA.indexOf('MSIE 7.0;')>-1;
-		this.isIE8=this.UA.indexOf('MSIE 8.0;')>-1;
-		this.isIE9=this.UA.indexOf('MSIE 9.0;')>-1;
-		this.isIE10=this.UA.indexOf('MSIE 10.0;')>-1;
-		this.isIE11=this.UA.indexOf('Trident')>-1;
-	};
+    //初始化对象
+    constructor(){
+        this.win=window.top
+        this.UA=navigator.userAgent
+        this.isPC=this.UA.indexOf('Windows NT')>-1
+        this.isAndroid=this.UA.indexOf('Android')>-1
+        this.isIos=this.UA.indexOf('Mac OS X')>-1
+        this.isIphone=this.UA.indexOf('iPhone;')>-1
+        this.isIpad=this.UA.indexOf('iPad;')>-1
+        this.isIE7=this.UA.indexOf('MSIE 7.0;')>-1
+        this.isIE8=this.UA.indexOf('MSIE 8.0;')>-1
+        this.isIE9=this.UA.indexOf('MSIE 9.0;')>-1
+        this.isIE10=this.UA.indexOf('MSIE 10.0;')>-1
+        this.isIE11=this.UA.indexOf('Trident')>-1
+    }
 
-	/*封装的ajax函数
+    /*封装的ajax函数
 	*type           	类型  get|post
 	*url            	api地址
 	*data           	请求的json数据
@@ -32,59 +30,59 @@ class util{
 	*timeout        	ajax超时时间
 	*isGoingLogin   	是否跳转到登录界面
 	*/
-	ajax(json){
-		let This=this;
-		let noError=true;
-		let url=null;
-		let asyncVal=typeof(json.async)=='boolean'?json.async:true;
-		This.showLoading();
-		//是否有请求超时
-		if(!json.notimeout){
-			var timeout=setTimeout(function(){
-				This.hideLoading();
-				// 请求超时
-				noError=false;
-				asyncVal&&popup.alert({type:'msg',title:'您的网络太慢了哦,请刷新重试!'});
-			}, json.timeout||config.ajaxtimeout);
-		}
-		// 增加时间戳参数
-		if(json.url.indexOf('?')!=-1){
-			url=json.url+'&_='+this.time();
-		}else{
-			url=json.url+'?_='+this.time();
-		};
-		return $.ajax({
-			type: json.type||"post",
-			url: url,
-			data: json.data||"",
-			datatype:"json",
-			async: asyncVal,
-			beforeSend:function(xhr){
-				json.beforeSend&&json.beforeSend(xhr);
-			},
-			success:function(data){
-				if(!json.nohideloading){ This.hideLoading();};
-				clearTimeout(timeout);
-				if(typeof(data)=='string'){
-					This.error(JSON.parse(data),json);
-				}else{
-					This.error(data,json);
-				}
-			},
-			complete:function(XMLHttpRequest){
-				if(!json.nohideloading){ This.hideLoading();};
-				clearTimeout(timeout);
-				if(json.complete){json.complete(XMLHttpRequest);}
-			},
-			error:function(XMLHttpRequest){
-				This.hideLoading();
-				clearTimeout(timeout);
-				if(noError){
-					This._error(XMLHttpRequest,json);
-				};	
-			}
-		});
-	};
+    ajax(json){
+        let This=this
+        let noError=true
+        let url=null
+        let asyncVal=typeof(json.async)=='boolean'?json.async:true
+        This.showLoading()
+        //是否有请求超时
+        if(!json.notimeout){
+            var timeout=setTimeout(function(){
+                This.hideLoading()
+                // 请求超时
+                noError=false
+                asyncVal&&popup.alert({type:'msg',title:'您的网络太慢了哦,请刷新重试!'})
+            }, json.timeout||config.ajaxtimeout)
+        }
+        // 增加时间戳参数
+        if(json.url.indexOf('?')!=-1){
+        	url=json.url+'&_='+this.time()
+        }else{
+        	url=json.url+'?_='+this.time()
+        };
+        return $.ajax({
+    		type: json.type||"post",
+    		url: url,
+    		data: json.data||"",
+    		datatype:"json",
+    		async: asyncVal,
+    		beforeSend:function(xhr){
+    			json.beforeSend&&json.beforeSend(xhr);
+    		},
+    		success:function(data){
+    			if(!json.nohideloading){ This.hideLoading();};
+    			clearTimeout(timeout);
+    			if(typeof(data)=='string'){
+    				This.error(JSON.parse(data),json);
+    			}else{
+    				This.error(data,json);
+    			}
+    		},
+    		complete:function(XMLHttpRequest){
+    			if(!json.nohideloading){ This.hideLoading();};
+    			clearTimeout(timeout);
+    			if(json.complete){json.complete(XMLHttpRequest);}
+    		},
+    		error:function(XMLHttpRequest){
+    			This.hideLoading();
+    			clearTimeout(timeout);
+    			if(noError){
+    				This._error(XMLHttpRequest,json);
+    			};	
+    		}
+    	});
+    };
 
 	//file 文件上传
 	fileAJAX(json){

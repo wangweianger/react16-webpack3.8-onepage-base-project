@@ -15,6 +15,11 @@
         "jquery": true,
         "serviceworker": true
     },
+    "globals": {
+        "popup": false,
+        "config":true,
+        "util":false
+    },
     "settings": {
         "import/ignore": [
             "node_modules"
@@ -31,7 +36,7 @@
         "eslint:recommended"
     ],
     "rules": {
-        "indent": [2, "tab"],
+        "indent": [2, 4],
         "quotes": [2, "single"],
         "linebreak-style": [2, "unix"],
         "semi": [2, "never"],
@@ -40,9 +45,9 @@
         "no-dupe-args": 2,
         "no-dupe-keys": 2,
         "no-duplicate-case": 2,
-        "no-console": 1,
-        "no-debugger": 1,
-        "no-var": 1,
+        "no-console": 0,
+        "no-debugger": 0,
+        "no-var": 0,
         "no-trailing-spaces": 0,
         "eol-last": 0,
         "no-unused-vars": 0,

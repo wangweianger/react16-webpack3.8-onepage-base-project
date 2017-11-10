@@ -8,28 +8,30 @@ import App from './App'
 import { routerReducer } from 'react-router-redux'
 
 //公用样式文件
-require('./assets/common/css/base.scss'); 
+require('./assets/common/css/base.scss') 
  
 // 弹窗
 import popup from 'popup'
 import $ from 'jquery'
 import config from 'common/js/config'
+import util from 'common/js/util'
 
-window.popup 	= popup;
-window.config 	= config;
-window.$ 		= $;
+window.popup 	= popup
+window.config 	= config
+window.util     = util
+window.$ 		= $
 
 // 创建 Redux 的 store 对象
 const store = createStore(
-  	combineReducers({
-	    reducers,
-	    routing: routerReducer
-  	})
-)
-
+    combineReducers({
+        reducers,
+        routing: routerReducer
+    })
+) 
+	
 render(
-	<Provider store={store} >  
-		<App /> 
-	</Provider>,
-	document.getElementById("app")
+    <Provider store={store} >  
+        <App /> 
+    </Provider>,
+    document.getElementById('app')
 )

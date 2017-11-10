@@ -4,7 +4,7 @@ require('./user.scss')
 
 export default class User extends React.Component {
     constructor(props, context){
-        super(props, context);
+        super(props, context)
         this.state = {
             datas:[
                 {id:1,name:'wangwei',sex:'男',hobby:'羽毛球，游泳，旅游'},
