@@ -38,7 +38,7 @@ module.exports = {
         　　 },
             {
                 test: /\.js$/,
-                exclude: /node_modules|vue\/dist/,
+                exclude: /node_modules\/dist/,
                 loader: 'babel-loader',
                 options: {
                     presets: [ 'env' ],
@@ -48,16 +48,14 @@ module.exports = {
     },
     //自动补全识别后缀
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.jsx', '.json'],
         alias: {
-            vue$:'vue/dist/vue.runtime.common.js',
             components: path.resolve(__dirname, '../src/components'),
-            commonvue: path.resolve(__dirname, '../src/commonvue'),
-            pages: path.resolve(__dirname, '../src/pages'),
+            commonjsx: path.resolve(__dirname, '../src/commonjsx'),
             common: path.resolve(__dirname, '../src/assets/common'),
-            assets:path.resolve(__dirname, '../src/assets'),
             popup: path.resolve(__dirname, '../src/assets/common/lib/popup/popup.js'),
-            page: path.resolve(__dirname, '../src/assets/common/lib/page/page.js'),
+            pages: path.resolve(__dirname, '../src/pages'),
+            actions: path.resolve(__dirname, '../src/redux/actions')
         },
     },
     plugins: [

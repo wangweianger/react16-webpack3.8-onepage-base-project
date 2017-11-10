@@ -43,7 +43,7 @@ const config = {
             {
                 test:/\.css$/, 
                 use: ExtractTextPlugin.extract({
-                    fallback: 'vue-style-loader',
+                    fallback: 'style-loader',
                     use: "css-loader"
                 })
             },
@@ -65,14 +65,12 @@ const config = {
     resolve: {
         extensions: ['.js', '.jsx', '.json'],
         alias: {
-            vue$:'vue/dist/vue.runtime.common.js',
             components: path.resolve(__dirname, '../src/components'),
-            commonvue: path.resolve(__dirname, '../src/commonvue'),
-            pages: path.resolve(__dirname, '../src/pages'),
+            commonjsx: path.resolve(__dirname, '../src/commonjsx'),
             common: path.resolve(__dirname, '../src/assets/common'),
-            assets:path.resolve(__dirname, '../src/assets'),
             popup: path.resolve(__dirname, '../src/assets/common/lib/popup/popup.js'),
-            page: path.resolve(__dirname, '../src/assets/common/lib/page/page.js'),
+            pages: path.resolve(__dirname, '../src/pages'),
+            actions: path.resolve(__dirname, '../src/redux/actions')
         },
     },
     devtool:"cheap-module-eval-source-map",

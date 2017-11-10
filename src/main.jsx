@@ -10,6 +10,14 @@ import { routerReducer } from 'react-router-redux'
 //公用样式文件
 require('./assets/common/css/base.scss'); 
  
+// 弹窗
+import popup from 'popup'
+import $ from 'jquery'
+
+
+window.popup = popup;
+window.$ = $;
+
 // 创建 Redux 的 store 对象
 const store = createStore(
   	combineReducers({
