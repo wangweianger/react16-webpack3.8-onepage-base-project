@@ -26,6 +26,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-polyfill": "^6.26.0",
@@ -35,6 +36,8 @@
     "bundle-loader": "^0.5.5",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "happypack": "^4.0.0",

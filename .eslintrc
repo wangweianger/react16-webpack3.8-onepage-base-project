@@ -1,15 +1,55 @@
 {
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
     "env": {
+        "es6": true,
         "browser": true,
         "node": true,
-        "es6": true
+        "commonjs": true,
+        "worker": true,
+        "amd": true,
+        "mocha": true,
+        "jest": true,
+        "jquery": true,
+        "serviceworker": true
     },
-    "parser": "babel-eslint",
-    "ecmaFeatures": {
-       "jsx": true
+    "settings": {
+        "import/ignore": [
+            "node_modules"
+        ]
     },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
     "rules": {
-        "indent":["error","tab"]
+        "indent": [2, "tab"],
+        "quotes": [2, "single"],
+        "linebreak-style": [2, "unix"],
+        "semi": [2, "never"],
+        "no-cond-assign": 2,
+        "no-constant-condition": 2,
+        "no-dupe-args": 2,
+        "no-dupe-keys": 2,
+        "no-duplicate-case": 2,
+        "no-console": 1,
+        "no-debugger": 1,
+        "no-var": 1,
+        "no-trailing-spaces": 0,
+        "eol-last": 0,
+        "no-unused-vars": 0,
+        "no-underscore-dangle": 0,
+        "no-alert": 0,
+        "no-lone-blocks": 0,
+        "jsx-quotes": 1
     }
 }
 

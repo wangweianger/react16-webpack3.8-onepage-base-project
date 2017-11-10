@@ -6,7 +6,7 @@ require('./home.scss')
 
 export default class Home extends React.Component {
     constructor(props, context) {
-        super(props, context);
+        super(props, context)
         this.state = {
             username: 'wangweianger00',
             begintime:'',
