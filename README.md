@@ -14,6 +14,9 @@
 ## react-router的4种异步加载方式
 ## http://blog.seosiwei.com/detail/10
 
+## 基于react-router-config的路由拆分
+## http://blog.seosiwei.com/detail/11
+
 ## 项目步骤
 
 1.安装node.js
