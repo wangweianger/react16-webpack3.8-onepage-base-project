@@ -13,10 +13,11 @@ require('./assets/common/css/base.scss');
 // 弹窗
 import popup from 'popup'
 import $ from 'jquery'
+import config from 'common/js/config'
 
-
-window.popup = popup;
-window.$ = $;
+window.popup 	= popup;
+window.config 	= config;
+window.$ 		= $;
 
 // 创建 Redux 的 store 对象
 const store = createStore(

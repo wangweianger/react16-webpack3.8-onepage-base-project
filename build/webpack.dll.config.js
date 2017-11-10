@@ -15,6 +15,7 @@ module.exports = {
             'react-dom',
             'zane-calendar',
             'common/js/format',
+            'popup',
         ]
     },
     output: {
