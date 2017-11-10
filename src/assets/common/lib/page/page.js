@@ -1,3 +1,4 @@
+/* eslint-disable */
 import util from 'common/js/util'
 import popup from 'popup'
 

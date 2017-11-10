@@ -8,8 +8,12 @@
     "dev": "cross-env PROT=8000 node build/webpack.dev.config.js",
     "test": "webpack -d --progress --hide-modules --colors --config build/webpack.test.config.js",
     "build": "webpack --progress --colors --config build/webpack.product.config.js",
-    "build:dll": "webpack --progress --config build/webpack.dll.config.js"
+    "build:dll": "webpack --progress --config build/webpack.dll.config.js",
+    "eslint": "eslint src "
   },
+  "pre-commit": [
+    "eslint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wangweianger/react16-webpack3.8-onepage-base-project.git"
@@ -45,6 +49,7 @@
     "jquery": "^3.2.1",
     "node-sass": "^4.6.0",
     "open-browser-webpack-plugin": "^0.0.5",
+    "pre-commit": "^1.2.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-loadable": "^5.3.1",

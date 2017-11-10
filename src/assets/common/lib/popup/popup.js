@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 require('./popup.css'); 
 //构造函数
 function PopLayer(){
