@@ -1,30 +1,24 @@
 // @flow
 import asyncComponent from 'components/AsyncComponent';
 
-const Home = asyncComponent(() => import("./home"));
-const One = asyncComponent(() => import("./one"));
-const Child = asyncComponent(() => import("./child"));
-const Two = asyncComponent(() => import("./two"));
-
-
 module.exports = [
     { 
         path: '/',
         exact: true,
-        component: Home
+        component: asyncComponent(() => import("./home"))
     },
     {
         path: '/one',
-        component: One,
+        component: asyncComponent(() => import("./one")),
         routes: [
             { path: '/one/child',
-                component: Child
+                component: asyncComponent(() => import("./child"))
             }
         ]
     },
     {
         path: '/two',
-        component: Two,
+        component: asyncComponent(() => import("./two")),
     }
 
 ]
