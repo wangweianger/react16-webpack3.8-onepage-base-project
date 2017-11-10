@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom'
 
 require('./home.scss')
 
-export default class Home extends React.Component {
+export default class One extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
             username: 'wang'
         }
+    }
+    handler(e){
+        console.log(this)
     }
 
     render() {
@@ -28,6 +31,7 @@ export default class Home extends React.Component {
                 <div className="tc fs-20">
                     {renderRoutes(this.props.route.routes)}
                 </div> 
+                <input value={this.state.username} onChange={this.handler.bind(this)}  />
             </div>
         )
     } 

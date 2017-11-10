@@ -2,7 +2,7 @@ import React from 'react'
 
 require('./user.scss')
 
-export default class Home extends React.Component {
+export default class User extends React.Component {
     constructor(props, context){
         super(props, context);
         this.state = {
