@@ -342,7 +342,6 @@ class util{
     IsNum (e) {
         var k = window.event ? e.keyCode : e.which
         if (((k >= 48) && (k <= 57)) || k == 8 || k == 0){
-            console.log('null')
         } else {
             if (window.event) {
                 window.event.returnValue = false

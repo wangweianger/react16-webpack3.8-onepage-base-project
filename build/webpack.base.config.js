@@ -82,6 +82,11 @@ const config = {
                     presets: [ 'env','react' ,'flow'],
                     plugins: ['syntax-dynamic-import']
                 }
+            },{
+                loader:'eslint-loader',
+                options: {
+                    emitWarning: true,
+                },
             }],
         }),
         // sass 编译多线程
@@ -109,7 +114,7 @@ const config = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new OpenBrowserPlugin({ url: `http://127.0.0.1:${PROT}` })
-    ],
+    ]
 }
 
 module.exports = config

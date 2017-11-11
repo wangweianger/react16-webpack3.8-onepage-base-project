@@ -23,7 +23,12 @@
     "settings": {
         "import/ignore": [
             "node_modules"
-        ]
+        ],
+        "react": {
+            "createClass": "createReactClass", 
+            "pragma": "React",  
+            "version": "16.0" 
+        },
     },
     "parserOptions": {
         "ecmaVersion": 6,
@@ -33,30 +38,42 @@
         }
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "rules": {
-        "indent": [2, 4],
-        "quotes": [2, "single"],
+        "indent": [2, 4],  //空格数
+        "quotes": [2, "single"], //单双引号
         "linebreak-style": [2, "unix"],
         "semi": [2, "never"],
-        "no-cond-assign": 2,
-        "no-constant-condition": 2,
-        "no-dupe-args": 2,
-        "no-dupe-keys": 2,
-        "no-duplicate-case": 2,
-        "no-console": 0,
-        "no-debugger": 0,
-        "no-var": 0,
-        "no-trailing-spaces": 0,
-        "eol-last": 0,
-        "no-unused-vars": 0,
+        "no-cond-assign": 2, //禁止条件表达式中出现赋值操作符
+        "no-constant-condition": 2, //禁止在条件中使用常量表达式
+        "no-control-regex":0, //正则
+        "no-dupe-args": 2, //禁止函数参数同名
+        "no-dupe-keys": 2, //禁止json中重复的key
+        "no-duplicate-case": 2,  //禁止switch同样的case条件
+        "no-console": 0, //禁止出现console
+        "no-debugger": 0, //禁止出现debugger
+        "no-alert":0, //禁止出现alert
+        "no-var": 0, //禁止出现没定义的var
+        "no-empty":0, //禁止出现空语句块
+        "no-trailing-spaces": 0, //禁用行尾空白
+        "no-empty-character-class":2, //禁止在正则表达式中使用空字符集
+        "no-ex-assign":2, //禁止对 catch 子句中的异常重新赋值
+        "no-extra-boolean-cast":2, //禁止不必要的布尔类型转换
+        "no-extra-semi":2, //禁用不必要的分号
+        "no-func-assign":2, //禁止对 function 声明重新赋值
+        "no-inner-declarations":2, //禁止在嵌套的块中出现变量声明或 function 声明
+        "no-irregular-whitespace":2, //禁止在字符串和注释之外不规则的空白
+        "no-obj-calls":2, //禁止将全局对象当作函数进行调用
+        "no-sparse-arrays":2, //禁用稀疏数组
+        "use-isnan":2, //要求使用 isNaN() 检查 NaN
+        "valid-typeof":2, //强制 typeof 表达式与有效的字符串进行比较
+        "eol-last": 0,  //要求或禁止文件末尾存在空行
+        "no-unused-vars": 0, //禁止出现未使用过的变量
         "no-underscore-dangle": 0,
-        "no-alert": 0,
         "no-lone-blocks": 0,
-        "jsx-quotes": 1
+        "jsx-quotes": 1,  //强制在 JSX 属性中一致地使用双引号或单引号
+        "react/prop-types":0,
     }
 }
-
-
-
