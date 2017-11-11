@@ -16,6 +16,7 @@ module.exports = {
             'zane-calendar',
             'common/js/format',
             'popup',
+            'prop-types'
         ]
     },
     output: {

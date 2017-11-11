@@ -35,3 +35,9 @@ render(
     </Provider>,
     document.getElementById('app')
 )
+
+function aa(a:string,b:string){
+    alert(a+b)
+}
+
+aa('11','22')
