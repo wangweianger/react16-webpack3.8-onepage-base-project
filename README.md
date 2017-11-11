@@ -43,7 +43,7 @@ npm run build
 ``` 
 
 
-** 增加flow **
+### 增加flow 
 - 参考链接： flow使用请参考官网：https://flow.org/
 
 
@@ -56,16 +56,16 @@ npm run flow
 
 ```
 
-** 如果Sublime要开启eslint的flow检测 需要做如下另个步骤 ** 
+### 如果Sublime要开启eslint的flow检测 需要做如下另个步骤  
 
 - 1.安装 npm install babel-preset-flow --save-dev    npm install flow-bin --save-dev
 - 2.sublime text安装 flow  SublimeLinter-flow两个插件
 - 参考链接：https://flow.org/en/docs/editors/sublime-text/
 
 
-** 新增eslint代码检查 **
+### 新增eslint代码检查 
 - sublime text 安装插件：SublimeLinter,SublimeLinter-contrib-eslint 插件
-** 参考链接： **
+ 参考链接： 
 - https://eslint.org/docs/user-guide/integrations
 - http://www.jianshu.com/p/e826e13c67ec
 - 提醒：提交代码之前会进行 eslint 检测，若检测不通过提交不了代码。
