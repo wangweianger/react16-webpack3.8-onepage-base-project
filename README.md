@@ -60,7 +60,7 @@ npm run flow check --all
 ### https://eslint.org/docs/user-guide/integrations
 ### http://www.jianshu.com/p/e826e13c67ec
 
-
+### 提醒：提交代码之前会进行 eslint 检测，若检测不通过提交不了代码。
 
 
 
