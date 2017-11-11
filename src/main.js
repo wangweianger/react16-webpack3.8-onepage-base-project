@@ -8,7 +8,7 @@ import App from './App'
 import { routerReducer } from 'react-router-redux'
 
 //公用样式文件
-require('./assets/common/css/base.scss') 
+require('common/css/base.scss') 
  
 // 弹窗
 import popup from 'popup'
@@ -27,7 +27,7 @@ const store = createStore(
         reducers,
         routing: routerReducer
     })
-) 
+)
 	
 render(
     <Provider store={store} >  
@@ -40,4 +40,4 @@ function aa(a:string,b:string){
     alert(a+b)
 }
 
-aa('11','22')
+aa(1,2)
