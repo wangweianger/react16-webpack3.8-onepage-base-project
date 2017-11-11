@@ -54,6 +54,12 @@ npm run flow check --all
 
 ```
 
+## 新增eslint代码检查
+### sublime text 安装插件：SublimeLinter,SublimeLinter-contrib-eslint 插件
+## 参考链接：
+### https://eslint.org/docs/user-guide/integrations
+### http://www.jianshu.com/p/e826e13c67ec
+
 
 
 
