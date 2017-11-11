@@ -39,7 +39,10 @@ npm run dev
 4.打包生产文件
 
 ```
+npm run build:dll   //此命令一般只运行一次 请参考上面weboack构建优化文章说明
+
 npm run build
+
 ``` 
 
 
