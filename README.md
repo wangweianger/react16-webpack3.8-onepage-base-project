@@ -73,7 +73,8 @@ npm run flow
 - http://www.jianshu.com/p/e826e13c67ec
 - 提醒：提交代码之前会进行 eslint 检测，若检测不通过提交不了代码。
 
-
+### DEMO图片
+![](https://github.com/wangweianger/react16-webpack3.8-onepage-base-project/blob/master/demoImg/01.png "")
 
 
 
