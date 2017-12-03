@@ -3,6 +3,32 @@ require('./popup.css')
 function PopLayer(){
     this.setting={}
 }
+
+/*确认回调函数*/
+PopLayer.prototype.dosomePopup=function(obj,yes){
+    this.closeThisPopup(obj)
+    yes&&yes()
+}
+PopLayer.prototype.addendHtml=function(str){
+    if(!$('div.popup').length){
+        $('body').append(str)
+    }
+}
+/*关闭遮罩*/
+PopLayer.prototype.closeThisPopup=function(obj){
+    if($(obj).parents('div.popup').length){
+        $(obj).parents('div.popup').remove()
+    }else{
+        $(obj).remove()
+    }
+}
+//居中函数
+PopLayer.prototype.middle=function(){
+    var main=$('div.popup_main')
+    main.css({marginTop:-main.height()/2-20+'px'})
+}
+
+
 /*extent json函数*/
 PopLayer.prototype.extend=function(json1,json2){
     var newJson=json1
@@ -42,15 +68,15 @@ PopLayer.prototype.varLiang=function(json){
 PopLayer.prototype.customHtml=function(json){
     this.varLiang(json)
     var str='<div class="popup">'
-    str+=this.setting.maskHide?'<div class="mask" onclick="closeThisPopup(this)"></div>':'<div class="mask"></div>'
+    str+=this.setting.maskHide?'<div class="mask" onclick="popup.closeThisPopup(this)"></div>':'<div class="mask"></div>'
     str+='<div class="popup_main" style="'+this.setting.style+'"><div class="maminContent">'
     if(this.setting.haveHeader){
-        str+=this.setting.closeBut?'<div class="header_poup">'+this.setting.header+'</div>':'<div class="header_poup">'+this.setting.header+'<span onclick="closeThisPopup(this)"></span></div>'
+        str+=this.setting.closeBut?'<div class="header_poup">'+this.setting.header+'</div>':'<div class="header_poup">'+this.setting.header+'<span onclick="popup.closeThisPopup(this)"></span></div>'
     }
     str+='<div class="content html">'+this.setting.html+'</div>'
     str+='</div></div></div>'
-    addendHtml(str)
-    middle() //居中
+    this.addendHtml(str)
+    this.middle() //居中
     this.setting.callback()
     
 }
@@ -59,10 +85,10 @@ PopLayer.prototype.iframe=function(json){
     util.showLoading()
     this.varLiang(json)
     var str='<div class="popup popup-iframe">'
-    str+=this.setting.maskHide?'<div class="mask" onclick="closeThisPopup(this)"></div>':'<div class="mask"></div>'
+    str+=this.setting.maskHide?'<div class="mask" onclick="popup.closeThisPopup(this)"></div>':'<div class="mask"></div>'
     str+='<div class="popup_main" style="'+this.setting.style+'"><div class="maminContent">'
     if(this.setting.haveHeader){
-        str+=this.setting.closeBut?'<div class="header_poup">'+this.setting.header+'</div>':'<div class="header_poup">'+this.setting.header+'<span onclick="closeThisPopup(this)"></span></div>'
+        str+=this.setting.closeBut?'<div class="header_poup">'+this.setting.header+'</div>':'<div class="header_poup">'+this.setting.header+'<span onclick="popup.closeThisPopup(this)"></span></div>'
     }
     var isIos=navigator.userAgent.indexOf('Mac OS X')>-1
     var isIpad=navigator.userAgent.indexOf('iPad;')>-1
@@ -74,7 +100,7 @@ PopLayer.prototype.iframe=function(json){
     str+='<iframe id="iframePage" src="'+json.src+'" width="100%" height="100%" frameborder="0"></iframe></div>'
     if(this.setting.yesHtml){str+='<div class="yesHtml" onclick="closeIframePopup(this)">'+this.setting.yesHtml+'</div>'}
     str+='</div></div></div>'       
-    addendHtml(str)
+    this.addendHtml(str)
     var height=0
     if(this.setting.yesHtml){
         height=$('div.popup_main').height()-20
@@ -112,58 +138,58 @@ PopLayer.prototype.iframe=function(json){
 PopLayer.prototype.alert=function(json){
     this.varLiang(json)
     var str='<div class="popup">'
-    str+=this.setting.maskHide?'<div class="mask" onclick="closeThisPopup(this)"></div>':'<div class="mask"></div>'
+    str+=this.setting.maskHide?'<div class="mask" onclick="popup.closeThisPopup(this)"></div>':'<div class="mask"></div>'
     str+='<div class="popup_main" style="'+this.setting.style+'"><div class="maminContent">'
     if(this.setting.haveHeader){
         str+=this.setting.closeBut?'<div class="header_poup"><i class="'+this.setting.imgs[json.type]+'"></i>\
-        '+this.setting.header+'</div>':'<div class="header_poup"><i class="'+this.setting.imgs[json.type]+'"></i>'+this.setting.header+'<span onclick="closeThisPopup(this)"></span></div>'
+        '+this.setting.header+'</div>':'<div class="header_poup"><i class="'+this.setting.imgs[json.type]+'"></i>'+this.setting.header+'<span onclick="popup.closeThisPopup(this)"></span></div>'
     }
     str+='<div class="content">'+this.setting.title+'</div>'
     str+='<div class="footer"><span class="yes yesok">确定</span></div>'
     str+='</div></div></div>'
     var This=this
-    addendHtml(str)
+    this.addendHtml(str)
     $('span.yes').click(function(){
         if(json.yes){
-            dosomePopup(this,This.setting.yes)
+            This.dosomePopup(this,This.setting.yes)
         }else{
-            closeThisPopup(this)
+            This.closeThisPopup(this)
         }
     })
-    middle() //居中
+    this.middle() //居中
 }
 //确认层
 PopLayer.prototype.confirm=function(json){
     this.varLiang(json)
     var This=this
     var str='<div class="popup">'
-    str+=this.setting.maskHide?'<div class="mask" onclick="closeThisPopup(this)"></div>':'<div class="mask"></div>'
+    str+=this.setting.maskHide?'<div class="mask" onclick="popup.closeThisPopup(this)"></div>':'<div class="mask"></div>'
     str+='<div class="popup_main" style="'+this.setting.style+'"><div class="maminContent">'
     if(this.setting.haveHeader){
-        str+='<div class="header_poup"><i class="'+this.setting.imgs[json.type]+'"></i>'+this.setting.header+'<span onclick="closeThisPopup(this)"></span></div>'
+        str+='<div class="header_poup"><i class="'+this.setting.imgs[json.type]+'"></i>'+this.setting.header+'<span onclick="popup.closeThisPopup(this)"></span></div>'
     }
     str+='<div class="content">'+this.setting.title+'</div>'
     str+='<div class="footer"><span class="yes yes5 yesok">确定</span><span class="no">取消</span></div>'
     str+='</div></div></div>'    
-    addendHtml(str)
+    this.addendHtml(str)
     $('span.yes').click(function(){
-        dosomePopup(this,This.setting.yes)
+        This.dosomePopup(this,This.setting.yes)
     })
     $('span.no').click(function(){
-        dosomePopup(this,This.setting.no)
+        This.dosomePopup(this,This.setting.no)
     })
-    middle() //居中
+    this.middle() //居中
 }
 /*2s消失*/
 PopLayer.prototype.miss=function(json){
     this.varLiang(json)
     this.setting.haveHeader=true
-    var str='<div class="popup popup-hide" onclick="closeThisPopup(this)">'
+    var str='<div class="popup popup-hide" onclick="popup.closeThisPopup(this)">'
     str+='<div class="popup_main" style="'+this.setting.style+'"><div class="maminContent maskMain miss_popup">'
     str+='<div class="content content-no">'+this.setting.title+'</div>'
     str+='</div></div></div>'    
-    addendHtml(str)
-    middle() //居中
+    this.addendHtml(str)
+    this.middle() //居中
     setTimeout(function(){
         $('div.popup-hide').remove()
     },this.setting.time)
@@ -181,8 +207,8 @@ PopLayer.prototype.loading=function(json){
     str+='<div class="popup_main" style="'+this.setting.style+'"><div class="maminContent maskMain">'
     str+='<div class="content content-no">'+this.setting.title+'</div>'
     str+='</div></div></div>'    
-    addendHtml(str)
-    middle() //居中
+    this.addendHtml(str)
+    this.middle() //居中
 }
 /*关闭加载层*/
 PopLayer.prototype.closeLoading=function(){
@@ -192,30 +218,6 @@ PopLayer.prototype.closeLoading=function(){
 PopLayer.prototype.closeIframe=function(){
     $('.popup-iframe', parent.document).remove()
 }
-/*确认回调函数*/
-function dosomePopup(obj,yes){
-    closeThisPopup(obj)
-    yes()
-}
-function addendHtml(str){
-    if(!$('div.popup').length){
-        $('body').append(str)
-    }
-}
-/*关闭遮罩*/
-function closeThisPopup(obj){
-    if($(obj).parents('div.popup').length){
-        $(obj).parents('div.popup').remove()
-    }else{
-        $(obj).remove()
-    }
-}
-//居中函数
-function middle(){
-    var main=$('div.popup_main')
-    main.css({marginTop:-main.height()/2-20+'px'})
-}
-
 
 module.exports=new PopLayer()
 
