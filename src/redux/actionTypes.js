@@ -2,6 +2,6 @@
  * action 类型
  */
 
-export const ADD_TODO = 'ADD_TODO'
-export const COMPLETE_TODO = 'COMPLETE_TODO'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+// 购物车
+export const GET_CART_NUMBER = 'GET_CART_NUMBER'
+export const UPDATE_CART_NUMBER = 'UPDATE_CART_NUMBER'  //更新购物车数量

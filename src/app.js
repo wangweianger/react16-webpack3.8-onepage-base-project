@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { 
     BrowserRouter as Router,
     Link
@@ -46,7 +47,11 @@ const routes = [
     ...require('pages/user/router')
 ]
 
-export default class App extends Component {
+class App extends Component {
+    constructor(props,context) {
+        super(props,context)
+    }
+ 
     render() {
         return (
             <Router> 
@@ -68,4 +73,6 @@ export default class App extends Component {
         )
     }   
 } 
+
+export default connect()(App)
 

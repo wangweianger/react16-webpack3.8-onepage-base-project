@@ -1,13 +1,9 @@
-import * as actionTypes from '../actionTypes'
+import { 
+    UPDATE_CART_NUMBER,
+} from '../actionTypes'
 
-/*
- * action 创建函数
- */
-export function addTodo(text) {
-    return { type: actionTypes.ADD_TODO, text }
+
+// 更新购物车数量
+export const updateCartNumber = (number) => {
+    return { type: UPDATE_CART_NUMBER, number }
 }
-
-export function completeTodo(index) {
-    return { type: actionTypes.COMPLETE_TODO, index }
-}
-

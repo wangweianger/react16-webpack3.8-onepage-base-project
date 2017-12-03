@@ -1,16 +1,19 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import zaneDate from 'zane-calendar'
 
 require('./home.scss')
 
+import { updateCartNumber } from 'actions'
 
-export default class Home extends React.Component {
+class Home extends React.Component {
     constructor(props, context) {
         super(props, context)
         this.state = {
             username: 'wangweianger00',
             begintime:'',
         }
+        console.log(props)
     }
 
     componentDidMount(){
@@ -33,10 +36,19 @@ export default class Home extends React.Component {
             alert('执行了!')
         }})
     }
+    handleAddNumber(){
+        const { number,dispatch } = this.props
+        dispatch(updateCartNumber(number+1))
+    }
 
     render() {
+        const { number } = this.props
         return (
             <div>
+                <div className="tc mb20 redux">
+                    <b>redux中的number值为</b> { number } 
+                    <button onClick={this.handleAddNumber.bind(this)} className="button">增加number计数</button>
+                </div>
                 <div className="tc mb20">
                     时间日历插件
                     <input className="input" type="" name="" id="zane-calendar" />
@@ -55,3 +67,10 @@ export default class Home extends React.Component {
     } 
 }
 
+// 获取购物车数量
+const mapStateToProps = (state) => {
+    return { 
+        number:state.home.number 
+    }
+}
+export default connect(mapStateToProps)(Home)
