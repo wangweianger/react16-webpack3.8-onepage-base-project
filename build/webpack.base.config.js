@@ -80,7 +80,7 @@ const config = {
                 loader: 'babel-loader',
                 options: {
                     presets: [ 'env','react' ,'flow'],
-                    plugins: ['syntax-dynamic-import']
+                    plugins: ['syntax-dynamic-import','transform-object-rest-spread']
                 }
             },{
                 loader:'eslint-loader',

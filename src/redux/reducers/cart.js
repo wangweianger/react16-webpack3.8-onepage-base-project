@@ -10,9 +10,9 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
     case GET_CART_NUMBER:
-        return { state, number: action.number }   
+        return { ...state, number: action.number }   
     case UPDATE_CART_NUMBER:
-        return { state, number: action.number }
+        return { ...state, number: action.number }
     default:
         return state
     }

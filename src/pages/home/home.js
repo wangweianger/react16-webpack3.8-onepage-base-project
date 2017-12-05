@@ -47,7 +47,7 @@ class Home extends React.Component {
             <div>
                 <div className="tc mb20 redux">
                     <b>redux中的number值为</b> { number } 
-                    <button onClick={this.handleAddNumber.bind(this)} className="button">增加number计数</button>
+                    <button onClick={this.handleAddNumber.bind(this)} className="button_add">增加number计数</button>
                 </div>
                 <div className="tc mb20">
                     时间日历插件
