@@ -7,8 +7,9 @@
     "flow": "flow check --all",
     "dev": "cross-env PROT=8000 node build/webpack.dev.config.js",
     "test": "webpack -d --progress --hide-modules --colors --config build/webpack.test.config.js",
+    "test:dll": "cross-env BUILD_TYPE=test webpack --progress --config build/webpack.dll.config.js",
     "build": "webpack --progress --colors --config build/webpack.product.config.js",
-    "build:dll": "webpack --progress --config build/webpack.dll.config.js",
+    "build:dll": "cross-env BUILD_TYPE=build webpack --progress --config build/webpack.dll.config.js",
     "eslint": "eslint src "
   },
   "pre-commit": [

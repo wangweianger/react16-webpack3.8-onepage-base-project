@@ -1,8 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-
-const distpath = '../dist/production/libs'
+const buildDir = process.env.BUILD_TYPE == 'build'?'production':'test'
+const distpath = `../dist/${buildDir}/libs`
 
 module.exports = {
     // 你想要打包的模块的数组
@@ -59,7 +59,7 @@ module.exports = {
     },
     plugins: [
         // 清除上一次生成的文件
-        new CleanWebpackPlugin(['production/libs'], {
+        new CleanWebpackPlugin([`${buildDir}/libs`], {
             root: path.resolve(__dirname, '../dist'),
             verbose: true, 
             dry: false,
