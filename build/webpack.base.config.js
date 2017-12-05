@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const PROT = process.env.PROT || 8000
 
 // 多线程
@@ -18,8 +17,6 @@ const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 const config = {
     entry: {
         main:[
-            `webpack-dev-server/client?http://172.16.60.7:${PROT}/`,
-            'webpack/hot/dev-server',
             'babel-polyfill',
             path.resolve(__dirname, '../src/main.js')
         ]
@@ -69,7 +66,6 @@ const config = {
             actions: path.resolve(__dirname, '../src/redux/actions')
         },
     },
-    devtool:'cheap-module-eval-source-map',
     //插件
     plugins: [
         //js 编译多线程 
@@ -112,8 +108,6 @@ const config = {
             chunks: ['main','vendors'],
             favicon:path.resolve(__dirname, '../favicon.ico'),
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new OpenBrowserPlugin({ url: `http://127.0.0.1:${PROT}` })
     ]
 }
 

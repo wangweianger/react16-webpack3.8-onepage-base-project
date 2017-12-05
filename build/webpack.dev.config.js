@@ -2,9 +2,20 @@
 const webpack = require('webpack')
 const config = require('./webpack.base.config')
 const WebpackDevServer = require('webpack-dev-server')
-const compiler = webpack(config)
+const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const PROT = process.env.PROT || 8000
 
+config.entry.main = (config.entry.main || []).concat([   
+    `webpack-dev-server/client?http://localhost:${PROT}/`,
+    'webpack/hot/dev-server',
+])
+config.plugins = (config.plugins || []).concat([
+    new webpack.HotModuleReplacementPlugin(),
+    new OpenBrowserPlugin({ url: `http://127.0.0.1:${PROT}` })
+])
+config.devtool='cheap-module-eval-source-map'
+
+const compiler = webpack(config)
 const server = new WebpackDevServer(compiler, {
     hot: true,
     inline: true,
