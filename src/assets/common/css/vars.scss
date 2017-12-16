@@ -1,14 +1,60 @@
 
 // sass相关备注
-$htmlcolor:#333;//全局字体颜色 
-$fontCorlor:#333;//字体全局颜色
-$lightcolor:#88898c;//文字淡色
-$activecolor:#c6cad0;//active背景颜色 
-$acolor:#5974d9;//全局a颜色
-$ahovercolor:#e47054;// 全局a:hover颜色
-$bordercolor:#eceaea;//边框颜色值
-$red:#c9302c; //红色
-$green:#449d44; //绿色
-$mainColor:#337ab7;//buton主要色调
+
+$C1:#333;           //黑色主色调
+$C2:#f0f0f0;        //border边线色调
+$C3:#F04848;        // 主红色色调
 
 
+
+
+
+/*------------------css 1px解决方案-----------------------*/
+@mixin common-border-one ($type,$color) {
+    content: '';
+    position: absolute;
+    @if $type == left {
+        height:100%;
+        width:1px;
+        left:0;
+        top:0;
+        transform: scaleX(0.5);
+        border-left: 1px solid $color;
+    } @else if $type == right {
+        height:100%;
+        width:1px;
+        right:0;
+        top:0;
+        transform: scaleX(0.5);
+        border-right: 1px solid $color;
+    } @else if $type == top {
+        height:1px;
+        width:100%;
+        left:0;
+        top:0;
+        transform: scaleY(0.5);
+        border-top: 1px solid $color;
+    } @else {
+        height:1px;
+        width:100%;
+        bottom:0;
+        left:0;
+        transform: scaleY(0.5);
+        border-bottom: 1px solid $color;
+    }
+    z-index: 1;
+}
+@mixin common-border-all ($color,$radius) {
+    position: absolute;
+    top: -0.5px;
+    left: -0.5px;
+    width: 200%;
+    height: 200%;
+    content: '';
+    border: 1px solid $color;
+    border-radius: $radius;
+    transform: scale(0.5);
+    transform-origin: top left;
+    z-index: -1;
+    display:block;
+}

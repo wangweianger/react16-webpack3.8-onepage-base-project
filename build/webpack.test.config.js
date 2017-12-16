@@ -17,7 +17,7 @@ config.module.rules = (config.module.rules || []).concat([{
     exclude: '/node_modules/',
     options:{
         publicPath:'/libs/',
-        manifest:path.resolve(__dirname, '../dist/test/libs/vendor-manifest.json')
+        manifest:path.resolve(__dirname, '../dist/production/libs/vendor-manifest.json')
     }
 },{
     //打包字符串替换
@@ -48,9 +48,6 @@ config.plugins = (config.plugins || []).concat([
     new ParallelUglifyPlugin({
         // 支持es6打包
         uglifyES: {
-            output: {
-                comments: false
-            },
             compress: {
                 warnings: false
             }

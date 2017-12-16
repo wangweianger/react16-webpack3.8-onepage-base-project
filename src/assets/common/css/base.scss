@@ -57,27 +57,20 @@ iframe { display: none; }
 //--------等待加载样式结束---------
 
 //字体相关样式
-html,body {color: $htmlcolor !important;}
-.fontCorlor {color: $fontCorlor !important;}
+html,body {color: #333;}
 a:hover{text-decoration:none;}
 
-.fs-12{font-size:12px !important;}
-.fs-14{font-size:14px !important;}
-.fs-16{font-size:16px !important;}
-.fs-18{font-size:18px !important;}
-.fs-20{font-size:20px !important;}
-.fs-25{font-size:25px !important;}
+.fs-12{font-size:12px;}
+.fs-14{font-size:14px;}
+.fs-16{font-size:16px;}
+.fs-18{font-size:18px;}
+.fs-20{font-size:20px;}
+.fs-25{font-size:25px;}
 
 .clear{clear:both}
-.blod{font-weight:blod!important;}
-.normal{font-weight:normal!important;}
+.blod{font-weight:blod;}
+.normal{font-weight:normal;}
 .cursor{cursor: pointer;}
-
-.maincolor{color:$mainColor!important;}
-.red{color:$red!important;}
-.green{color:$green!important;}
-.acolor{color:$acolor!important;}
-.errorClass{background:#fdf4f4;border:solid 1px #fba7a7 !important;}
 
 .tl{text-align:left;}
 .tc{text-align:center;}
@@ -86,22 +79,18 @@ a:hover{text-decoration:none;}
 .fl{float:left;}
 .fr{float:right;}
 
-.inline-block{display:inline-block!important;}
+.inline-block{display:inline-block;}
 
-.w-50{width:50px!important;}
-.w-80{width:80px!important;}
-.w-100{width:100px!important;}
-.w-150{width:150px!important;}
-.w-200{width:200px!important;}
-.w-250{width:250px!important;}
-.w-300{width:300px!important;}
-.w-400{width:400px!important;}
-.w-500{width:500px!important;}
+.w-50{width:50px;}
+.w-80{width:80px;}
+.w-100{width:100px;}
+.w-150{width:150px;}
+.w-200{width:200px;}
+.w-250{width:250px;}
+.w-300{width:300px;}
+.w-400{width:400px;}
+.w-500{width:500px;}
 
-//--------字体相关样式结束------
-
-$animal: boder-1px;
-//----禁止选中样式结束-----
 
 //阿里icon样式
 @font-face {

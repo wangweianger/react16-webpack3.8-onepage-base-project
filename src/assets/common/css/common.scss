@@ -26,13 +26,17 @@
 	padding:8px 15px;
 	border:solid 1px #ddd;
 }
-
 .input{
 	height:35px;
 	border:solid 1px #ddd;
 	padding-left:10px;
 }
-
+/*------------------css 1px解决方案-----------------------*/
+.c-b-l:before { @include common-border-one(left,$C2); }
+.c-b-r:before { @include common-border-one(right,$C2); }
+.c-b-t:before { @include common-border-one(top,$C2); }
+.c-b-b:before { @include common-border-one(bottom,$C2); }
+.c-b-c:after{ @include common-border-all($C2,0); }
 
 
 
