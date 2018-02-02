@@ -13,8 +13,11 @@ module.exports = [
         routes: [
             { path: '/one/child',
                 component: asyncComponent(() => import('./child'))
-            }
+            },
         ]
+    },
+    { path: '/other/:id',
+        component: asyncComponent(() => import('./child'))
     },
     {
         path: '/two',

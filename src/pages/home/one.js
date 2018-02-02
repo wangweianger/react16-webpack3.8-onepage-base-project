@@ -16,6 +16,12 @@ export default class One extends React.Component {
         console.log(this)
     }
 
+    handlerone(e){
+        console.log('000')
+        let id = 0
+        this.props.history.push(`/other/${id}`)
+    }
+
     render() {
         return (
             <div>
@@ -23,6 +29,11 @@ export default class One extends React.Component {
                     加载child /one/child 路由
                     <Link to="/one/child">/one/child</Link>
                 </div> 
+
+                <div className="tc mt20">
+                    加载动态路由
+                    <button className="home-button" onClick={this.handlerone.bind(this)}>加载动态路由</button>                    
+                </div>
 
                 <div className="home">
                     {this.state.username}<br/>

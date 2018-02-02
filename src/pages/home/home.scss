@@ -12,6 +12,9 @@
 		box-shadow:0 0 5px #ccc;
 	}
 }
+.mt20{
+	margin-top:20px;
+}
 .redux{
 	font-size:25px;
 	color:red;
@@ -22,4 +25,13 @@
 	color:#000;
 	margin-left:20px;
 	cursor:pointer;
+}
+.home-button{
+	padding:5px 10px;
+	border:solid 1px #6f8fb7;
+	margin-left:10px;
+	cursor:pointer;
+	color:#fff;
+	background:#6f8fb7;
+	border-radius:3px;
 }
