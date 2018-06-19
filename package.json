@@ -72,6 +72,6 @@
     "webpack-dev-server": "^2.9.4",
     "webpack-dll-loader": "^0.0.1",
     "webpack-parallel-uglify-plugin": "^1.0.0",
-    "zane-calendar": "^2.*.*"
+    "zane-calendar": "^2.1.8"
   }
 }
