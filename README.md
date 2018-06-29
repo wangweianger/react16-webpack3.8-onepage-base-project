@@ -8,7 +8,7 @@
 >  * redux            
 >  * babel            
 
-## 项目webpack 优化说明文档
+## 项目webpack 优化说明文档 
 ## http://blog.seosiwei.com/detail/9
 
 ## react-router的4种异步加载方式
