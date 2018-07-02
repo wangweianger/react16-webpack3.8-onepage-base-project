@@ -29,7 +29,7 @@ npm install
 yarn install
 ```
 
-3.运行开发环境
+3.运行开发环境 
 
 ```
 npm run dev 
