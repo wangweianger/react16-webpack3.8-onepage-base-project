@@ -21,7 +21,7 @@
 
 1.安装node.js
 
-2.安装项目依赖包
+2.安装项目依赖包 
 
 ```
 npm install
@@ -46,7 +46,7 @@ npm run build
 ``` 
 
 
-### 增加flow 
+### 增加flow  
 - 参考链接： flow使用请参考官网：https://flow.org/
 
 
