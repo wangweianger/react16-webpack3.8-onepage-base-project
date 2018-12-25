@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import zaneDate from 'zane-calendar'
+import { DatePicker, Button, Checkbox } from 'antd'
 
 require('./home.scss')
 
@@ -41,6 +42,10 @@ class Home extends React.Component {
         dispatch(updateCartNumber(number+1))
     }
 
+    onChange(e) {
+        console.log(`checked = ${e.target.checked}`)
+    }
+
     render() {
         const { number } = this.props
         return (
@@ -49,6 +54,18 @@ class Home extends React.Component {
                     <b>redux中的number值为</b> { number } 
                     <button onClick={this.handleAddNumber.bind(this)} className="button_add">增加number计数</button>
                 </div>
+                <div className="mb20">
+                    <Checkbox onChange={this.onChange.bind(this)}>Checkbox</Checkbox>
+                </div>
+                <div className="mb20">
+                    <Button type="primary">Primary</Button>
+                    <Button className="ml20">Default</Button>
+                    <Button className="ml20" type="dashed">Dashed</Button>
+                    <Button className="ml20" type="danger">Danger</Button>
+                </div>
+                <div className="mb20">
+                    <DatePicker />
+                </div> 
                 <div className="tc mb20">
                     时间日历插件
                     <input className="input" type="" name="" id="zane-calendar" />

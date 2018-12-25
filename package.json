@@ -72,6 +72,9 @@
     "webpack-dev-server": "^2.9.4",
     "webpack-dll-loader": "^0.0.1",
     "webpack-parallel-uglify-plugin": "^1.0.0",
-    "zane-calendar": "^2.1.8"
+    "zane-calendar": "^2.2.4"
+  },
+  "dependencies": {
+    "antd": "^3.11.6"
   }
 }

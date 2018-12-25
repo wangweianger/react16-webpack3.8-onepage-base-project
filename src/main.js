@@ -4,6 +4,8 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './redux/reducers'
 import App from './App'
+// ant css
+import 'antd/dist/antd.css'
 
 //公用样式文件
 require('common/css/base.scss') 
